@@ -99,6 +99,20 @@ int insertion_sort(int n, int arr[])
     
 }
 
+int remove_occur(int n, int arr[], int val)
+{
+    printf("The newest array is: ");
+    for (int i = 0; i < n; i++)
+    {
+        if(arr[i] == val){
+            continue;
+        }
+        else{
+            printf("%d ", arr[i]);
+        }
+    }
+   
+}
 
 
 int main()
@@ -119,5 +133,10 @@ int main()
     sort_traditional_lowtohigh(n, arr);   printf("\n");
     sort_traditional_hightolow(n, arr);   printf("\n");
     insertion_sort(n, arr);   printf("\n");
+
+    int val;
+    printf("Nhap chu so muon xoa: ");  
+    scanf("%d", &val);
+    remove_occur(n, arr, val);   printf("\n");
 
 }
