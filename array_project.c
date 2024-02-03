@@ -120,6 +120,29 @@ int remove_occur(int n, int arr[], int val)
    
 }
 
+// C Program To Merge Two Arrays
+void merge_2_array(int arr[], int arr1[], int n, int arr1_size)
+{
+    int arr_total[100];
+    int size_result = n + arr1_size;
+    for (int i = 0; i < n; i++)
+    {
+        arr_total[i] = arr[i] ;
+    }
+
+    for (int i = n, j = 0; i < size_result, j < arr1_size; i++, j++)
+    {
+            arr_total[i] = arr1[j];   
+    }
+    
+    printf("Mảng mới arr total là: ");
+    for (int i = 0; i < size_result; i++)
+    {
+        printf("%d ", arr_total[i]);
+    }
+}
+
+
 
 int main()
 {
@@ -144,6 +167,17 @@ int main()
     printf("Nhap chu so muon xoa: ");  
     scanf("%d", &val);
     remove_occur(n, arr, val);   printf("\n");
+
+    int arr1_size;
+    printf("Nhap kich thuoc mang: ");
+    scanf("%d", &arr1_size); 
+    int arr1[100];
+    printf("Nhap n chu so mang arr1: ");
+    for (int i = 0; i < arr1_size; i++)
+    {
+        scanf("%d", &arr1[i]);
+    }
+    merge_2_array(arr, arr1, n, arr1_size);
 
 }
 
