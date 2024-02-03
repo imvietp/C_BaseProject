@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// Print all elements in array
 int print_element(int n, int arr[])
 {
     for(int i = 0; i < n; i++)
@@ -8,6 +9,7 @@ int print_element(int n, int arr[])
     }
 }
 
+// Find the largest element in array
 int largest_element(int n, int arr[])
 {
     int max = arr[0];
@@ -21,6 +23,7 @@ int largest_element(int n, int arr[])
     return max;
 }
 
+// Calculate the average of the array
 int average(int n, int arr[])
 {
     int sum = 0;
@@ -32,6 +35,7 @@ int average(int n, int arr[])
     return (double) sum/n; 
 }
 
+// Sort all element from min to max
 int sort_traditional_lowtohigh(int n, int arr[])
 {
     int temp;
@@ -53,6 +57,7 @@ int sort_traditional_lowtohigh(int n, int arr[])
     }
 }
 
+// Sort all element from max to min
 int sort_traditional_hightolow(int n, int arr[])
 {
     int temp;
@@ -74,7 +79,7 @@ int sort_traditional_hightolow(int n, int arr[])
     }
 }
 
-
+// Sort all element from min to max by using insertion sort
 int insertion_sort(int n, int arr[])
 {
     int i, j, key;
@@ -99,6 +104,7 @@ int insertion_sort(int n, int arr[])
     
 }
 
+// Remove the occurence of element in array
 int remove_occur(int n, int arr[], int val)
 {
     printf("The newest array is: ");
