@@ -140,3 +140,6 @@ int main()
     remove_occur(n, arr, val);   printf("\n");
 
 }
+
+// test pullrequest
+// ahihi
