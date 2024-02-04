@@ -89,11 +89,45 @@ void sort()
     }
 }
 
+
+//Reverse number in an Array 
+// Swap number
+void swap(int* x, int* y)
+{
+    int temp; 
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+// Reserve number
+void reverse()
+{
+    int n = 4;
+    int arr[100] = {1, 3, 2, 4};
+    int *ptr1; 
+    int *ptr2;
+    ptr1 = arr;
+    ptr2 = arr + n - 1;
+    while (ptr1 < ptr2) {
+        swap(ptr1, ptr2);
+        ptr1++;
+        ptr2--;
+    }
+    
+
+    for(int i = 0; i < n; i++){
+        printf("%d ", arr[i]);
+    }
+
+}
+
 int main()
 {
     //value_and_address();
     //input_operator_of_pointer();
     //input_function();
     //size_of();
-    sort();
+    //sort();
+    reverse();
 }
