@@ -66,10 +66,34 @@ void size_of()
     printf("The size of r char is %d bytes", sizeof(r)); printf("\n");
 }
 
+// Sort number of array using pointer
+void sort()
+{
+    int n = 4;
+    int arr[100] = {1, 2, 3, 4};
+    int *ptr;
+    ptr = arr;
+    int t;
+    for(int i = 0; i < n; i++){
+        for(int j = i + 1; j < n; j++){
+            if(*(ptr + j) > *(ptr + i)){
+                t = *(ptr + i);
+                *(ptr + i) = *(ptr + j);
+                *(ptr + j) = t;
+            }
+        }
+    }
+
+    for(int i = 0; i < n; i++){
+        printf("%d ", *(ptr + i));
+    }
+}
+
 int main()
 {
     //value_and_address();
     //input_operator_of_pointer();
     //input_function();
-    size_of();
+    //size_of();
+    sort();
 }
