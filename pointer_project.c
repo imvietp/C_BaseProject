@@ -122,6 +122,22 @@ void reverse()
 
 }
 
+// Find the largest element using pointer
+void largest()
+{
+    int n = 4;
+    int arr[100] = {1, 3, 9, 4};
+    int *ptr;
+    ptr = arr;
+    int max = *(ptr + 1);
+    for(int i = 0; i < n; i++){
+        if(max < *(ptr + i)){
+            max = *(ptr + i);
+        }
+    }
+    printf("The largest number in an array is: %d", max);
+
+}
 int main()
 {
     //value_and_address();
@@ -129,5 +145,6 @@ int main()
     //input_function();
     //size_of();
     //sort();
-    reverse();
+    //reverse();
+    largest();
 }
