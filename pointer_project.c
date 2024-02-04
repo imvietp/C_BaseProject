@@ -85,7 +85,7 @@ void sort()
     }
 
     for(int i = 0; i < n; i++){
-        printf("%d ", *(ptr + i));
+        printf("%d ", *(ptr + i)); // or printf("%d ", arr[i]);
     }
 }
 
