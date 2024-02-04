@@ -80,7 +80,7 @@ void add_two_string(char* str1, char* str2)
     }
 }
 
-
+// Combine two strings
 void combine_two_strings(char* str1, char* str2)
 {
     char str3[100];
@@ -100,9 +100,9 @@ void combine_two_strings(char* str1, char* str2)
     }
     str3[i] = '\0';
     printf("%s", str3);
-    
-
 }
+
+
 
 int main ()
 {
