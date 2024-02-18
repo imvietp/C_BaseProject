@@ -164,26 +164,62 @@ void sapxepsinhvientheoten(str ds[50], int n)
 // Device control
 int main()
 {
-    //printf("Chọn những lựa chọn sau: \n");
-    //printf("1. Nhập tên sinh viên: \n");
+    printf("Chọn những lựa chọn sau: \n");
+    printf("1. Nhập tên sinh viên: \n");
     str sv1;
     int n;
+    int chon;
 
     str ds[50];
+    do
+    {
+        printf("Chọn những lựa chọn sau: \n");
+        printf("1. Nhập danh sach sinh viên: \n");
+        printf("2. Xuất danh sach sinh viên: \n");
+        printf("3. Sap xep theo ten sinh viên: \n");
+        printf("4. Sap xep theo GPA sinh viên: \n");
+        printf("5: Tìm điểm cao nhất của sinh viên\n");
 
-    nhapdanhsachsinhvien(ds, n);
-    xuatdanhsachsinhvien(ds, n);
+        scanf("%d", &chon);
 
-    sapxepsinhvien_gpa_thaptoicao(ds, n);
-    printf("Sau khi sắp xếp theo gpa: ");
-    xuatdanhsachsinhvien(ds,n);
+        switch (chon)
+        {
+        case 1:
+            nhapdanhsachsinhvien(ds, n);
+            break;
+            
+        case 2:
+            xuatdanhsachsinhvien(ds, n);
+            break;        
 
-    sapxepsinhvientheoten(ds, n);
-    printf("Sau khi sắp xếp theo ten: ");
-    xuatdanhsachsinhvien(ds,n);
+        case 3:
+            sapxepsinhvientheoten(ds, n);
+            printf("Sau khi sắp xếp theo ten: ");
+            xuatdanhsachsinhvien(ds,n);
+            break;
 
-    int max_diem = diemcaonhatsinhvien(ds, n);
-    printf("Điểm cao nhất của sinh viên là: %d điểm", max_diem);
+        case 4:
+            sapxepsinhvien_gpa_thaptoicao(ds, n);
+            printf("Sau khi sắp xếp theo gpa: ");
+            xuatdanhsachsinhvien(ds,n);
+            break;        
+        case 5:
+            int max_diem = diemcaonhatsinhvien(ds, n);
+            printf("Điểm cao nhất của sinh viên là: %d điểm\n", max_diem);
+            break;
+        }    
+
+
+    } while (n != 0 );
+    
+
+    
+    
+
+
+
+
+
 
 
     //inputStudent(sv1);
