@@ -121,7 +121,27 @@ int diemcaonhatsinhvien(str ds[50], int n)
     return maxdiem ;
 }
 
+// Sắp xếp sinh viên có gpa từ thấp tới cao
+void sapxepsinhvien_gpa_thaptoicao(str ds[50], int n)
+{
+    str temp;
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (ds[i].gpa > ds[j].gpa)
+            {                       
+                temp = ds[i];
+                ds[i] = ds[j];
+                ds[j] = temp; 
+            }
+        }  
+    }
 
+
+   
+    
+}
 
 
 // Device control
@@ -136,6 +156,11 @@ int main()
 
     nhapdanhsachsinhvien(ds, n);
     xuatdanhsachsinhvien(ds, n);
+
+    sapxepsinhvien_gpa_thaptoicao(ds, n);
+    printf("Sau khi sắp xếp: ");
+    xuatdanhsachsinhvien(ds,n);
+
     int max_diem = diemcaonhatsinhvien(ds, n);
     printf("Điểm cao nhất của sinh viên là: %d điểm", max_diem);
 
