@@ -93,6 +93,7 @@ void nhapdanhsachsinhvien(str ds[50], int &n)
     
 }
 
+// Xuất danh sách sinh viên
 void xuatdanhsachsinhvien(str ds[50], int n)
 {
     printf("Danh sách các sinh viên: \n");
@@ -104,6 +105,20 @@ void xuatdanhsachsinhvien(str ds[50], int n)
         printf("\n");
     }
 
+}
+
+// Sinh viên có điểm cao nhất
+int diemcaonhatsinhvien(str ds[50], int n)
+{
+    int maxdiem = ds[0].gpa;
+    for (int i = 0; i < n; i++)
+    {
+        if (maxdiem < ds[0].gpa)
+        {
+            maxdiem = ds[0].gpa;
+        }
+    }
+    return maxdiem ;
 }
 
 
@@ -118,9 +133,11 @@ int main()
     int n;
 
     str ds[50];
-    str xds[50];
+
     nhapdanhsachsinhvien(ds, n);
     xuatdanhsachsinhvien(ds, n);
+    int max_diem = diemcaonhatsinhvien(ds, n);
+    printf("Điểm cao nhất của sinh viên là: %d điểm", max_diem);
 
 
     //inputStudent(sv1);
