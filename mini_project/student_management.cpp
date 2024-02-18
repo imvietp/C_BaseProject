@@ -124,13 +124,14 @@ int diemcaonhatsinhvien(str ds[50], int n)
 // Sắp xếp sinh viên có gpa từ thấp tới cao
 void sapxepsinhvien_gpa_thaptoicao(str ds[50], int n)
 {
-    str temp;
+    
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = i + 1; j < n; j++)
         {
             if (ds[i].gpa > ds[j].gpa)
-            {                       
+            {
+                str temp;                       
                 temp = ds[i];
                 ds[i] = ds[j];
                 ds[j] = temp; 
