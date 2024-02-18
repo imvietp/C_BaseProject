@@ -113,9 +113,9 @@ int diemcaonhatsinhvien(str ds[50], int n)
     int maxdiem = ds[0].gpa;
     for (int i = 0; i < n; i++)
     {
-        if (maxdiem < ds[0].gpa)
+        if (maxdiem < ds[i].gpa)
         {
-            maxdiem = ds[0].gpa;
+            maxdiem = ds[i].gpa;
         }
     }
     return maxdiem ;
@@ -138,9 +138,25 @@ void sapxepsinhvien_gpa_thaptoicao(str ds[50], int n)
             }
         }  
     }
+}
 
-
-   
+// Sắp xếp sinh viên theo tên
+void sapxepsinhvientheoten(str ds[50], int n)
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if(strcmp(ds[i].name, ds[j].name) > 0)
+            {
+                str temp;                       
+                temp = ds[i];
+                ds[i] = ds[j];
+                ds[j] = temp; 
+            }
+        }
+        
+    }
     
 }
 
@@ -159,7 +175,11 @@ int main()
     xuatdanhsachsinhvien(ds, n);
 
     sapxepsinhvien_gpa_thaptoicao(ds, n);
-    printf("Sau khi sắp xếp: ");
+    printf("Sau khi sắp xếp theo gpa: ");
+    xuatdanhsachsinhvien(ds,n);
+
+    sapxepsinhvientheoten(ds, n);
+    printf("Sau khi sắp xếp theo ten: ");
     xuatdanhsachsinhvien(ds,n);
 
     int max_diem = diemcaonhatsinhvien(ds, n);
